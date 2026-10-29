@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-ivory-100 text-ink-900 font-sans antialiased; line-height: 1.65; }
+  html[lang='hi'] body { line-height: 1.75; }
+  h1, h2, h3 { line-height: 1.35; }
+  :focus-visible { outline: 2px solid theme('colors.saffron.500'); outline-offset: 2px; border-radius: 6px; }
+  ::selection { background: theme('colors.saffron.100'); }
+}
+@layer components {
+  .panel { @apply bg-ivory-50 border border-ivory-300 rounded-panel; }
+  .eyebrow { @apply text-[12px] font-semibold uppercase tracking-wider text-ink-400; }
+  html[lang='hi'] .eyebrow { @apply normal-case tracking-normal text-[12.5px]; }
+  .num { font-variant-numeric: tabular-nums; }
+  .input { @apply w-full rounded-lg border border-ivory-300 bg-white px-3 py-2 text-[15px] outline-none transition focus:border-saffron-500 focus:ring-2 focus:ring-saffron-500/20; }
+  .rule { @apply border-ivory-300; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
